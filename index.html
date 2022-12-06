@@ -11,54 +11,105 @@
 <body>
 
     <header>
-        <ul class="nav nav-tabs nav-pills nav-fill">
-            <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">MiLista</a>
+        <ul class="nav nav-bar">
+            <li class="nav-item item-left">
+                <a class="nav-link active" aria-current="page" href="#">Registrarse</a>
             </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">Anotaciones</a>
+            <li class="nav-item item-left">
+                <a class="nav-link" href="#">Iniciar sesión</a>
             </li>
-            <li class="nav-item">
-            <a class="nav-link disabled">Extra</a>
+            <li class="nav-item item-right">
+                <a class="nav-link disabled">Estadísticas</a>
             </li>
+            <li class="nav-item item-right">Iniciar Actividad</li>
+            <li class="nav-item item-right">Detener Actividad</li>
         </ul>
     </header>
 
-
-    <div class="left-side-tab">
-        <ul>
-            <li><a href="">Agregar</a></li>
-            <li><a href="">Modificar</a></li>
-            <li><a href="">Eliminar</a></li>
-        </ul>
-    </div>
-
-
-    <div class="main-list">
-        <div class="card">
-            <h3>Task 1</h3>
-            <p>Mi tarea nro uno.</p>
-        </div>
-        <div class="card">
-            <h3>Task 2</h3>
-            <p>Mi tarea nro dos.</p>
-        </div>
-        <div class="card">
-            <h3>Task 3</h3>
-            <p>Mi tarea nro tres.</p>
-        </div>
-        <div class="card">
-            <h3>Task 4</h3>
-            <p>Mi tarea nro cuatro.</p>
-        </div>
+    <div class="table main-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Hora Inicio</th>
+                    <th>Hora Fin</th>
+                    <th>Tiempo</th>
+                    <th>Actividad</th>
+                    <th>Área</th>
+                    <th>Estado</th>
+                    <th>Usuario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>28-11-2022</td>
+                    <td>11:13</td>
+                    <td>-</td>
+                    <td>26'</td>
+                    <td>Desarrollo web</td>
+                    <td>Programación</td>
+                    <td>En curso</td>
+                    <td>Cris</td>
+                </tr>
+                <tr>
+                    <td>27-11-2022</td>
+                    <td>13:30</td>
+                    <td>19:15</td>
+                    <td>5h 45'</td>
+                    <td>Jugger</td>
+                    <td>Deporte</td>
+                    <td>Finalizado</td>
+                    <td>Caspian</td>
+                </tr>
+                <tr>
+                    <td>26-11-2022</td>
+                    <td>16:00</td>
+                    <td>17:35</td>
+                    <td>1h 35'</td>
+                    <td>Fútbol</td>
+                    <td>Deporte</td>
+                    <td>Finalizado</td>
+                    <td>Argentina</td>
+                </tr>
+                <tr>
+                    <td>25-11-2022</td>
+                    <td>14:00</td>
+                    <td>23:59</td>
+                    <td>10h</td>
+                    <td>Casamiento</td>
+                    <td>Legal</td>
+                    <td>Finalizado</td>
+                    <td>Familia</td>
+                </tr>
+                <tr>
+                    <td>23-11-2022</td>
+                    <td>18:40</td>
+                    <td>21:38</td>
+                    <td>2h 58'</td>
+                    <td>Examen</td>
+                    <td>Universidad</td>
+                    <td>Finalizado</td>
+                    <td>Cris</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
     <footer>
         <nav class="nav bottom-nav">
             <ul>
-                <li>Ayuda</li>
-                <li>Redes</li>
-                <li>Creador</li>                
+                <li class="nav-item item-left">
+                    <a class="nav-link active" aria-current="page" href="#">Contacto</a>
+                </li>
+                <li class="nav-item item-left">
+                    <a class="nav-link active" aria-current="page" href="#">Ayuda</a>
+                </li>
+                <li class="nav-item item-left">
+                    <a class="nav-link active" aria-current="page" href="#">Redes</a>
+                </li>
+                <li class="nav-item item-left">
+                    <a class="nav-link active" aria-current="page" href="#">Sobre el creador</a>
+                </li>    
             </ul>
         </nav>
     </footer>
