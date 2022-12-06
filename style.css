@@ -1,0 +1,21 @@
+A {
+    text-decoration: none;
+}
+
+.nav li {
+    display: inline;
+}
+
+.nav a, .left-side-tab a {
+    padding: .5em;
+    color: black;
+}
+
+.nav a:hover, .left-side-tab a:hover {
+    background-color: rgb(201, 180, 252);
+}
+
+.left-side-tab li {
+    padding-top: .5em;
+    padding-bottom: 2em;
+}
