@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sense Tracking</title>
     <link rel="stylesheet" href="style.css">
-
+    <script src="script.js" defer></script>  
 </head>
 <body>
 
@@ -21,13 +21,13 @@
             <li class="nav-item item-right">
                 <a class="nav-link disabled">Estadísticas</a>
             </li>
-            <li class="nav-item item-right">Iniciar Actividad</li>
-            <li class="nav-item item-right">Detener Actividad</li>
+            <li class="nav-item item-right btn"><button id="btn-iniciar-act">Iniciar Actividad</button></li>
+            <li class="nav-item item-right btn"><button type="button" id="btn-detener-act">Detener Actividad</button></li>
         </ul>
     </header>
 
     <div class="table main-table">
-        <table>
+        <table id="main-table">
             <thead>
                 <tr>
                     <th>Fecha</th>
