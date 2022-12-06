@@ -13,8 +13,12 @@ const addRow = () => {
     let estado = document.createElement("td");
     let usuario = document.createElement("td");
 
-    //const fechaText = document.createTextNode(`05-12-22`);
-    //fecha.appendChild(fechaText);
+    //hardcodeado, la idea es recibir el input del usuario para completar la fila con los datos
+    //Idea: al apretar el botón para iniciar una nueva actividad, una fila (formulario) para completar se pone en primer
+    //plano. Por detrás, cuando se termina de completar, se toma el input y se agrega finalmente la fila con este método addRow()
+    //Lo que ahora está hardcodeado será input del usuario que se debe tomar de ese form (fila que se muestra para completar)
+    //En primer lugar, realizar con éxito el tomar el input y agregar la fila, luego se verán el estilo y los efectos
+
     addTextToColumn(fecha, `05-12-22`);
     addTextToColumn(horaInicio, `21:00`);
     addTextToColumn(horaFin, `-`);
@@ -37,17 +41,18 @@ const addRow = () => {
     document.querySelector("#main-table").appendChild(row);
 };
 
-    const boton = document.getElementById('btn-detener-act');
-
-    var msg = function() {
-        alert("Hola")
-    };
-    boton.addEventListener('click', msg);
-
     var addTextToColumn = (column, text) => {
         const columnText = document.createTextNode(text);
         column.appendChild(columnText);
     };
 
+
+
+//Sin implementar
+const boton = document.getElementById('btn-detener-act');
+var msg = function() {
+    alert("Detener Actividad: Aún sin implementar")
+};
+boton.addEventListener('click', msg);
 
 
