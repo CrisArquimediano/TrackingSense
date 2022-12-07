@@ -8,6 +8,8 @@ document.querySelector('#boton-agregar-actividad').addEventListener("click", () 
     //Poner para que agregue una sola vez la actividad
     //Hacer que no agregue una fila vacía o incompleta (exceptuando el tiempo total que se cierra cuando se detiene la actividad
     //y se actualiza mientras transcurre el tiempo)
+    //Hacer que se pueda cancelar
+    //Deshabilitar los botones de 'Iniciar Actividad' y 'Detener Actividad' mientras se usa esta parte
     getInput()
     addRow()
     showHideTable()
@@ -28,16 +30,33 @@ const showHideTable = () => {
 
 const getInput = () => {
 
-    console.log("Obtengo el input")
+    getDateAndHour()
 
-    fechaInput = document.getElementById("fecha-input").value
-    horaInicioInput = document.getElementById("hora-inicio-input").value
-    horaFinInput = document.getElementById("hora-fin-input").value
-    tiempoInput = document.getElementById("tiempo-transcurrido").value
+    horaFinInput = `-` //ingresar tiempo local una vez terminada la actividad
+    tiempoInput = `-` //calcular entre tiempo fin y tiempo inicio para obtener el tiempo total
+    //O mejor aun, que se vaya actualizando el tiempo mientras transcurre, quizás de a minuto
     actividadInput = document.getElementById("actividad-input").value
     areaInput = document.getElementById("area-input").value
-    estadoActividad = document.getElementById("estado-actividad").value
+    estadoActividad = "En curso" // hacer que dependa de los botones 'Iniciar Actividad' y 'Detener Actividad'
     usuarioInput = document.getElementById("usuario-input").value
+}
+
+const getDateAndHour = () => {
+    let date = new Date()
+
+    //Fecha
+    let year = date.getFullYear()
+    let month = date.getMonth() + 1
+    let day = date.getDate()
+    let fechaString = [year, month, day].join('-')
+    fechaInput = fechaString
+
+    //Hora
+    let hour = date.getHours()
+    let minute = date.getMinutes()
+    let second = date.getSeconds()
+    let horaString = [hour, minute, second].join(':')
+    horaInicioInput = horaString
 }
 
 const addRow = () => {
