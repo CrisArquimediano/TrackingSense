@@ -30,42 +30,29 @@
         </ul>
     </header>
 
-    <form>
-        <div class="new-task input-task" id="input-table"> <!-- Poner para que el botón de Iniciar Actividad muestre y tome los datos de acá -->
+    <form id="nueva-act-form">
+        <div class="new-task input-task" id="input-table">
             <table>
                 <thead>
                     <tr>
-                        <th>Fecha</th>
-                        <th>Hora Inicio</th>
-                        <th>Hora Fin</th>
-                        <th>Tiempo</th>
                         <th>Actividad</th>
                         <th>Área</th>
-                        <th>Estado</th>
                         <th>Usuario</th>
                     </tr>
                 </thead>        
                 <tbody>
                     <tr>
-                        <!-- Nada referido a fechas y tiempo debería preguntarse en el input, eso se debe obtener al momento de crear la actividad-->
-                        <label>Fecha</label>
-                        <td><input id="fecha-input" type="date" name="fecha" /></td>
-                        <label>Hora Inicio</label>
-                        <td><input id="hora-inicio-input" type="time" name="horaInicio" /></td>
-                        <label>Hora Fin</label>
-                        <td><input id="hora-fin-input" type="time" name="horaFin" /></td>
-                        <label>Tiempo</label>
-                        <td><input id="tiempo-transcurrido" type="time" name="tiempo" /></td> <!-- Ver en JS para tomar el tiempo transcurrido -->
-                        <label>Actividad</label>
+                        <label class="label-input">Actividad</label>
                         <td><input id="actividad-input" type="text" name="actividad" /></td>
-                        <label>Área</label>
+                        <label class="label-input">Área</label>
                         <td><input id="area-input" type="text" name="area" /></td>
-                        <label>Usuario</label>
+                        <label class="label-input">Usuario</label>
                         <td><input id="usuario-input" type="text" name="usuario" /></td>
                     </tr>
                 </tbody>
             </table>
-            <button type="button" id="boton-agregar-actividad">Agregar actividad</button>
+            <button type="button" form="nueva-act-form" id="boton-agregar-actividad">Agregar actividad</button>
+            <button type="reset" id="boton-cancelar-actividad">Cancelar</button>
         </div>
     </form>
 
