@@ -10,10 +10,22 @@ document.querySelector('#boton-agregar-actividad').addEventListener("click", () 
     //y se actualiza mientras transcurre el tiempo)
     //Hacer que se pueda cancelar
     //Deshabilitar los botones de 'Iniciar Actividad' y 'Detener Actividad' mientras se usa esta parte
-    getInput()
-    addRow()
-    showHideTable()
+    if (getInput()) {
+        addRow()
+        showHideTable()
+    } else {
+        alert("Completar todos los campos, por favor.")
+    }
+
 })
+
+const submitForm = () => {
+    if (getInput()) {
+        addRow()
+        showHideTable()
+        alert("Funciono")
+    }
+}
 
 const showHideTable = () => {
     console.log("Me oculto o me muestro")
@@ -39,6 +51,12 @@ const getInput = () => {
     areaInput = document.getElementById("area-input").value
     estadoActividad = "En curso" // hacer que dependa de los botones 'Iniciar Actividad' y 'Detener Actividad'
     usuarioInput = document.getElementById("usuario-input").value
+
+    if (actividadInput === "" || areaInput === "" || usuarioInput === "") {
+        return false
+    } else {
+        return true
+    }
 }
 
 const getDateAndHour = () => {

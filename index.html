@@ -30,7 +30,7 @@
         </ul>
     </header>
 
-    <form id="nueva-act-form">
+    <form id="nueva-act-form" method="POST" target="_self" onsubmit="submitForm()">
         <div class="new-task input-task" id="input-table">
             <table>
                 <thead>
@@ -43,14 +43,15 @@
                 <tbody>
                     <tr>
                         <label class="label-input">Actividad</label>
-                        <td><input id="actividad-input" type="text" name="actividad" /></td>
+                        <td><input id="actividad-input" type="text" name="actividad" required/></td>
                         <label class="label-input">Área</label>
-                        <td><input id="area-input" type="text" name="area" /></td>
+                        <td><input id="area-input" type="text" name="area" required/></td>
                         <label class="label-input">Usuario</label>
-                        <td><input id="usuario-input" type="text" name="usuario" /></td>
+                        <td><input id="usuario-input" type="text" name="usuario" required/></td>
                     </tr>
                 </tbody>
             </table>
+            <input type="submit" value="Agregar">
             <button type="button" form="nueva-act-form" id="boton-agregar-actividad">Agregar actividad</button>
             <button type="reset" id="boton-cancelar-actividad">Cancelar</button>
         </div>
