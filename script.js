@@ -1,44 +1,19 @@
 var fechaInput, horaInicioInput, horaFinInput, tiempoInput, actividadInput, areaInput, estadoActividad, usuarioInput
 
 document.querySelector("#btn-iniciar-act").addEventListener("click", () => {
-    showHideTable()
+    document.getElementById("input-table").style.display = 'block'
+    document.getElementById("btn-iniciar-act").disabled = true
+    document.getElementById('btn-detener-act').disabled = false 
 })
 
 document.querySelector('#boton-agregar-actividad').addEventListener("click", () => { 
-    //Poner para que agregue una sola vez la actividad
-    //Hacer que no agregue una fila vacía o incompleta (exceptuando el tiempo total que se cierra cuando se detiene la actividad
-    //y se actualiza mientras transcurre el tiempo)
-    //Hacer que se pueda cancelar
-    //Deshabilitar los botones de 'Iniciar Actividad' y 'Detener Actividad' mientras se usa esta parte
     if (getInput()) {
         addRow()
-        showHideTable()
+        document.getElementById("input-table").style.display = 'none'
     } else {
         alert("Completar todos los campos, por favor.")
     }
-
 })
-
-const submitForm = () => {
-    if (getInput()) {
-        addRow()
-        showHideTable()
-        alert("Funciono")
-    }
-}
-
-const showHideTable = () => {
-    console.log("Me oculto o me muestro")
-    const table = document.getElementById("input-table")
-    
-    if (table.style.display === 'none') { 
-        table.style.display = 'block'
-    } else if (table.style.display === 'block') {
-        table.style.display = 'none'
-    } else {
-        table.style.display = 'block'
-    }  
-}
 
 const getInput = () => {
 
@@ -116,13 +91,17 @@ var addTextToColumn = (column, text) => {
     column.appendChild(columnText)
 }
 
-
-
 //Sin implementar
+//Poner en la tabla al detener la actividad: estado finalizado, hora fin y tiempo transcurrido
 const boton = document.getElementById('btn-detener-act')
 var msg = function() {
     alert("Detener Actividad: Aún sin implementar")
-};
+
+    console.log("Deshabilito detener y habilito iniciar actividad")
+    document.getElementById("btn-iniciar-act").disabled = false
+    boton.disabled = true
+    document.getElementById("input-table").style.display = 'none'
+}
 boton.addEventListener('click', msg)
 
 

@@ -25,12 +25,12 @@
                 <button id="btn-iniciar-act">Iniciar Actividad</button>
             </li>
             <li class="nav-item item-right btn">
-                <button type="button" id="btn-detener-act">Detener Actividad</button>
+                <button type="button" id="btn-detener-act" disabled="true">Detener Actividad</button>
             </li>
         </ul>
     </header>
 
-    <form id="nueva-act-form" method="POST" target="_self" onsubmit="submitForm()">
+    <form id="nueva-act-form">
         <div class="new-task input-task" id="input-table">
             <table>
                 <thead>
@@ -51,9 +51,8 @@
                     </tr>
                 </tbody>
             </table>
-            <input type="submit" value="Agregar">
             <button type="button" form="nueva-act-form" id="boton-agregar-actividad">Agregar actividad</button>
-            <button type="reset" id="boton-cancelar-actividad">Cancelar</button>
+            <button type="reset" id="boton-cancelar-actividad">Borrar</button>
         </div>
     </form>
 
