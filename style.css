@@ -19,3 +19,7 @@ A {
     padding-top: .5em;
     padding-bottom: 2em;
 }
+
+#input-table {
+    display: none;
+}

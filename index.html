@@ -30,8 +30,8 @@
         </ul>
     </header>
 
-    <div class="new-task input-task"> <!-- Poner para que el botón de Iniciar Actividad muestre y tome los datos de acá -->
-        <table id="input-table">
+    <div class="new-task input-task" id="input-table"> <!-- Poner para que el botón de Iniciar Actividad muestre y tome los datos de acá -->
+        <table>
             <thead>
                 <tr>
                     <th>Fecha</th>
@@ -52,11 +52,12 @@
                     <td><input id="tiempo-transcurrido" type="time" /></td> <!-- Ver en JS para tomar el tiempo transcurrido -->
                     <td><input id="actividad-input" type="text" /></td>
                     <td><input id="area-input" type="text" /></td>
-                    <td><input id="estado-input" type="text" /></td> <!-- Poner para elegir solo entre En curso/Finalizado -->
+                    <td><input id="estado-actividad" type="text" /></td> <!-- Debe ser En curso al iniciar y Finalizado al terminar -->
                     <td><input id="usuario-input" type="text" /></td>
                 </tr>
             </tbody>
         </table>
+        <button type="button" id="boton-agregar-actividad">Agregar actividad</button>
     </div>
 
     <div class="table main-table">

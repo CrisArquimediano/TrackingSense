@@ -1,15 +1,34 @@
-var fechaInput, horaInicioInput, horaFinInput, tiempoInput, actividadInput, areaInput, estadoInput, usuarioInput
+var fechaInput, horaInicioInput, horaFinInput, tiempoInput, actividadInput, areaInput, estadoActividad, usuarioInput
 
 document.querySelector("#btn-iniciar-act").addEventListener("click", () => {
-    addTask()
+    showHideTable()
 })
 
-const addTask = () => {
+document.querySelector('#boton-agregar-actividad').addEventListener("click", () => { 
+    //Poner para que agregue una sola vez la actividad
+    //Hacer que no agregue una fila vacía o incompleta (exceptuando el tiempo total que se cierra cuando se detiene la actividad
+    //y se actualiza mientras transcurre el tiempo)
     getInput()
     addRow()
+    showHideTable()
+})
+
+const showHideTable = () => {
+    console.log("Me oculto o me muestro")
+    const table = document.getElementById("input-table")
+    
+    if (table.style.display === 'none') { 
+        table.style.display = 'block'
+    } else if (table.style.display === 'block') {
+        table.style.display = 'none'
+    } else {
+        table.style.display = 'block'
+    }  
 }
 
 const getInput = () => {
+
+    console.log("Obtengo el input")
 
     fechaInput = document.getElementById("fecha-input").value
     horaInicioInput = document.getElementById("hora-inicio-input").value
@@ -17,11 +36,12 @@ const getInput = () => {
     tiempoInput = document.getElementById("tiempo-transcurrido").value
     actividadInput = document.getElementById("actividad-input").value
     areaInput = document.getElementById("area-input").value
-    estadoInput = document.getElementById("estado-input").value
+    estadoActividad = document.getElementById("estado-actividad").value
     usuarioInput = document.getElementById("usuario-input").value
 }
 
 const addRow = () => {
+    console.log("Agrego la fila")
     let row = document.createElement("tr")
     let fecha = document.createElement("td")
     let horaInicio = document.createElement("td")
@@ -38,7 +58,7 @@ const addRow = () => {
     addTextToColumn(tiempo, tiempoInput)
     addTextToColumn(actividad, actividadInput)
     addTextToColumn(area, areaInput)
-    addTextToColumn(estado, estadoInput)
+    addTextToColumn(estado, estadoActividad)
     addTextToColumn(usuario, usuarioInput)
 
 
