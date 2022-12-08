@@ -1,4 +1,5 @@
 var fechaInput, horaInicioInput, horaFinInput, tiempoInput, actividadInput, areaInput, estadoActividad, usuarioInput
+var dateInicio, dateFin
 
 document.querySelector("#btn-iniciar-act").addEventListener("click", () => {
     document.getElementById("input-table").style.display = 'block'
@@ -19,12 +20,11 @@ const getInput = () => {
 
     getDateAndHour()
 
-    horaFinInput = `-` //ingresar tiempo local una vez terminada la actividad
-    tiempoInput = `-` //calcular entre tiempo fin y tiempo inicio para obtener el tiempo total
-    //O mejor aun, que se vaya actualizando el tiempo mientras transcurre, quizás de a minuto
+    horaFinInput = `-` 
+    tiempoInput = `-`  //Mejorar para que se vaya actualizando el tiempo mientras transcurre, quizás de a minuto
     actividadInput = document.getElementById("actividad-input").value
     areaInput = document.getElementById("area-input").value
-    estadoActividad = "En curso" // hacer que dependa de los botones 'Iniciar Actividad' y 'Detener Actividad'
+    estadoActividad = "En curso" 
     usuarioInput = document.getElementById("usuario-input").value
 
     if (actividadInput === "" || areaInput === "" || usuarioInput === "") {
@@ -35,25 +35,27 @@ const getInput = () => {
 }
 
 const getDateAndHour = () => {
-    let date = new Date()
+    dateInicio = new Date()
 
     //Fecha
-    let year = date.getFullYear()
-    let month = date.getMonth() + 1
-    let day = date.getDate()
+    let year = dateInicio.getFullYear()
+    let month = dateInicio.getMonth() + 1
+    let day = dateInicio.getDate()
     let fechaString = [year, month, day].join('-')
     fechaInput = fechaString
 
     //Hora
-    let hour = date.getHours()
-    let minute = date.getMinutes()
-    let second = date.getSeconds()
+    let hour = dateInicio.getHours()
+    let minute = dateInicio.getMinutes()
+    let second = dateInicio.getSeconds()
     let horaString = [hour, minute, second].join(':')
     horaInicioInput = horaString
 }
 
+var contadorIds = 0;
+var idEstado, idHoraFin, idTiempo
+
 const addRow = () => {
-    console.log("Agrego la fila")
     let row = document.createElement("tr")
     let fecha = document.createElement("td")
     let horaInicio = document.createElement("td")
@@ -63,7 +65,16 @@ const addRow = () => {
     let area = document.createElement("td")
     let estado = document.createElement("td")
     let usuario = document.createElement("td")
-    
+
+    idEstado = 'estado-actividad' + contadorIds
+    idHoraFin = 'hora-fin' + contadorIds
+    idTiempo = 'tiempo' + contadorIds
+
+    contadorIds++
+    estado.setAttribute('id', idEstado)
+    horaFin.setAttribute('id', idHoraFin)
+    tiempo.setAttribute('id', idTiempo)   
+   
     addTextToColumn(fecha, fechaInput)
     addTextToColumn(horaInicio, horaInicioInput)
     addTextToColumn(horaFin, horaFinInput)
@@ -91,17 +102,33 @@ var addTextToColumn = (column, text) => {
     column.appendChild(columnText)
 }
 
-//Sin implementar
-//Poner en la tabla al detener la actividad: estado finalizado, hora fin y tiempo transcurrido
-const boton = document.getElementById('btn-detener-act')
-var msg = function() {
-    alert("Detener Actividad: Aún sin implementar")
 
-    console.log("Deshabilito detener y habilito iniciar actividad")
+//////////////////////////////////////////      Detener Actividad       //////////////////////////////////////////////
+const boton = document.getElementById('btn-detener-act')
+var detenerActividad = () => {
+    //Se cambia el estado
     document.getElementById("btn-iniciar-act").disabled = false
     boton.disabled = true
     document.getElementById("input-table").style.display = 'none'
+
+    document.getElementById(idEstado).innerHTML = "Finalizado"
+
+    //Se ingresa hora fin
+    dateFin = new Date()
+    let horaFin = dateFin.getHours()
+    let minutoFin = dateFin.getMinutes()
+    let segundoFin = dateFin.getSeconds()
+    let horaString = [horaFin, minutoFin, segundoFin].join(':')
+    document.getElementById(idHoraFin).innerHTML = horaString
+
+    //Se calcula el tiempo transcurrido
+    let hour = horaFin - dateInicio.getHours()
+    let minute = minutoFin - dateInicio.getMinutes()
+    let second = segundoFin - dateInicio.getSeconds()
+    let tiempo = [hour + 'h', minute + '\'', second + '"'].join(' ')
+    document.getElementById(idTiempo).innerHTML = tiempo
+
 }
-boton.addEventListener('click', msg)
+boton.addEventListener('click', detenerActividad)
 
 
