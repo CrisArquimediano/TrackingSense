@@ -4,126 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sense Tracking</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>  
+    <title>SenseTracking</title>
 </head>
 <body>
-
     <header>
         <ul class="nav nav-bar">
             <li class="nav-item item-left">
-                <a class="nav-link active" aria-current="page" href="#">Registrarse</a>
+                <a class="nav-link active" aria-current="page" href="registrarse.html">Registrarse</a>
             </li>
             <li class="nav-item item-left">
-                <a class="nav-link" href="#">Iniciar sesión</a>
-            </li>
-            <li class="nav-item item-right">
-                <a class="nav-link disabled">Estadísticas</a>
-            </li>
-            <li class="nav-item item-right btn">
-                <button id="btn-iniciar-act">Iniciar Actividad</button>
-            </li>
-            <li class="nav-item item-right btn">
-                <button type="button" id="btn-detener-act" disabled="true">Detener Actividad</button>
+                <a class="nav-link" href="iniciar-sesion.html">Iniciar sesión</a>
             </li>
         </ul>
     </header>
+    
+    <h1>Sense Tracking: Sense your tracking!</h1>
 
-    <form id="nueva-act-form">
-        <div class="new-task input-task" id="input-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Actividad</th>
-                        <th>Área</th>
-                        <th>Usuario</th>
-                    </tr>
-                </thead>        
-                <tbody>
-                    <tr>
-                        <label class="label-input">Actividad</label>
-                        <td><input id="actividad-input" type="text" name="actividad" required/></td>
-                        <label class="label-input">Área</label>
-                        <td><input id="area-input" type="text" name="area" required/></td>
-                        <label class="label-input">Usuario</label>
-                        <td><input id="usuario-input" type="text" name="usuario" required/></td>
-                    </tr>
-                </tbody>
-            </table>
-            <button type="button" form="nueva-act-form" id="boton-agregar-actividad">Agregar actividad</button>
-            <button type="reset" id="boton-cancelar-actividad">Borrar</button>
-        </div>
-    </form>
-
-    <div class="table main-table">
-        <table id="main-table">
-            <thead>
-                <tr>
-                    <th>Fecha</th>
-                    <th>Hora Inicio</th>
-                    <th>Hora Fin</th>
-                    <th>Tiempo</th>
-                    <th>Actividad</th>
-                    <th>Área</th>
-                    <th>Estado</th>
-                    <th>Usuario</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>28-11-2022</td>
-                    <td>11:13</td>
-                    <td>-</td>
-                    <td>26'</td>
-                    <td>Desarrollo web</td>
-                    <td>Programación</td>
-                    <td>En curso</td>
-                    <td>Cris</td>
-                </tr>
-                <tr>
-                    <td>27-11-2022</td>
-                    <td>13:30</td>
-                    <td>19:15</td>
-                    <td>5h 45'</td>
-                    <td>Jugger</td>
-                    <td>Deporte</td>
-                    <td>Finalizado</td>
-                    <td>Caspian</td>
-                </tr>
-                <tr>
-                    <td>26-11-2022</td>
-                    <td>16:00</td>
-                    <td>17:35</td>
-                    <td>1h 35'</td>
-                    <td>Fútbol</td>
-                    <td>Deporte</td>
-                    <td>Finalizado</td>
-                    <td>Argentina</td>
-                </tr>
-                <tr>
-                    <td>25-11-2022</td>
-                    <td>14:00</td>
-                    <td>23:59</td>
-                    <td>10h</td>
-                    <td>Casamiento</td>
-                    <td>Legal</td>
-                    <td>Finalizado</td>
-                    <td>Familia</td>
-                </tr>
-                <tr>
-                    <td>23-11-2022</td>
-                    <td>18:40</td>
-                    <td>21:38</td>
-                    <td>2h 58'</td>
-                    <td>Examen</td>
-                    <td>Universidad</td>
-                    <td>Finalizado</td>
-                    <td>Cris</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
 
     <footer>
         <nav class="nav bottom-nav">
@@ -143,7 +39,6 @@
             </ul>
         </nav>
     </footer>
-
 
 </body>
 </html>
