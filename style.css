@@ -8,16 +8,31 @@ A {
 
 .nav a, .left-side-tab a {
     padding: .5em;
-    color: black;
+    color: rgba(235, 235, 235, 0.945);
 }
 
 .nav a:hover, .left-side-tab a:hover {
-    background-color: rgb(201, 180, 252);
+    background-color: rgb(51,142,202); /* rgb(111, 178, 199); */
 }
 
 .left-side-tab li {
     padding-top: .5em;
     padding-bottom: 2em;
+}
+
+header {
+    background-color: rgb(41,114,162);
+    padding-top: .1em;
+    padding-bottom: 1em;
+    margin-bottom: 2.5em;
+}
+
+header ul {
+    text-align: right;
+}
+
+body {
+    background-color: rgba(236, 236, 236, 0.788);
 }
 
 #input-table {
@@ -26,6 +41,11 @@ A {
 
 .label-input {
     display: none;
+}
+
+.titulo {
+    color:rgb(252, 255, 255);
+    padding-left: .5em;
 }
 
 .titulo-principal {
@@ -40,9 +60,10 @@ A {
 
 /*Footer*/
 
-.main-footer {
-    background-color: rgb(46, 128, 182);
-    color: black;
+.main-footer, .nav-link-footer {
+    background-color: rgb(41,114,162);
+    display: inline;
+    color: rgb(255, 255, 255);
     padding: .12em;
 }
 
