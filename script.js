@@ -122,13 +122,39 @@ var detenerActividad = () => {
     document.getElementById(idHoraFin).innerHTML = horaString
 
     //Se calcula el tiempo transcurrido
-    let hour = horaFin - dateInicio.getHours()
-    let minute = minutoFin - dateInicio.getMinutes()
-    let second = segundoFin - dateInicio.getSeconds()
-    let tiempo = [hour + 'h', minute + '\'', second + '"'].join(' ')
+    /////////////////////////////////////////      BUG encontrado y SOLCIONADO    
+    //La RESTA podía dar resultados negativos, continuar VERIFICANDO (En realidad, TESTEAR con testing unitario).
+    let tiempo = calcularTiempoTotal(horaFin, minutoFin, segundoFin)
     document.getElementById(idTiempo).innerHTML = tiempo
 
 }
 boton.addEventListener('click', detenerActividad)
+
+const calcularTiempoTotal = (horaF, minutoF, segundoF) => {
+    let hora, minuto, segundo
+
+    let horaI = dateInicio.getHours()
+    let minutoI = dateInicio.getMinutes()
+    let segundoI = dateInicio.getSeconds()
+
+    if (segundoF < segundoI) {
+        minutoF--
+        segundoF += 60
+    }
+    segundo = segundoF - segundoI
+    
+    if (minutoF < minutoI) {
+        horaF--
+        minutoF += 60
+    }
+    minuto = minutoF - minutoI
+
+    if (horaF < horaI) {
+        horaF += 24
+    }
+    hora = horaF - horaI
+
+    return [hora + 'h', minuto + '\'', segundo + '"'].join(' ')
+}
 
 
