@@ -17,10 +17,10 @@
                     <a class="nav-link disabled">Estadísticas</a>
                 </li>
                 <li class="nav-item item-right btn">
-                    <button id="btn-iniciar-act">Iniciar Actividad</button>
+                    <button type="button" class="button button2" id="btn-detener-act" disabled="true">Detener Actividad</button>
                 </li>
                 <li class="nav-item item-right btn">
-                    <button type="button" id="btn-detener-act" disabled="true">Detener Actividad</button>
+                    <button type="button" class="button button1" id="btn-iniciar-act">Iniciar Actividad</button>
                 </li>
             </ul>
         </header>
@@ -46,8 +46,8 @@
                         </tr>
                     </tbody>
                 </table>
-                <button type="button" form="nueva-act-form" id="boton-agregar-actividad">Agregar actividad</button>
-                <button type="reset" id="boton-cancelar-actividad">Borrar</button>
+                <button type="reset" class="button button2" id="boton-cancelar-actividad">Borrar</button>
+                <button type="button" form="nueva-act-form" class="button button1" id="boton-agregar-actividad">Agregar</button>
             </div>
         </form>
 
