@@ -136,3 +136,32 @@ tr:nth-child(even) {
     height: 5rem;            /* footer height */
 }
 
+
+
+/* ////////////////////////      Registrarse y Login      ///////////////////////////     */
+
+.body-form {
+    background-color: #dadada;
+}
+
+.form-persona {
+    width: 40%;
+    background-color: rgb(41,114,162); /*Cambiar o sacar*/
+    color: #dadada; /*Ver color*/
+    margin: auto;
+    margin-top: 15%;
+}
+
+.form-persona input {
+    width: 100%;
+    border: 2px solid rgb(223, 223, 223); /*Cambiar*/
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.form-persona input:focus { /*Cambiar estos colores feos*/
+    border: 3px solid #555;
+    background-color: aqua;
+}
