@@ -150,10 +150,11 @@ tr:nth-child(even) {
     color: #dadada; /*Ver color*/
     margin: auto;
     margin-top: 15%;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .form-persona input {
-    width: 100%;
+    width: 99%;
     border: 2px solid rgb(223, 223, 223); /*Cambiar*/
     border-radius: 4px;
     padding: 10px 15px;
