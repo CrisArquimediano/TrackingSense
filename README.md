@@ -1,6 +1,6 @@
-SenseTracking
+#SenseTracking
 
-Introducción
+##Introducción
 Se propone realizar una aplicación web para el trackeo de actividades. La aplicación se denomina SenseTracking, de la cual ya hay una versión mínima existente (https://crisarquimediano.github.io/Web/SenseTracking/main.html?firts-name=&last-name=&user=&email=&contrase%C3%B1a=) desarrollada por mí en diciembre del 2022.
 
 Ahora se pretende retomar este proyecto, para reafirmar y adquirir conocimiento de desarrollo, testeo y gestión y así obtener un perfil de FullStack Developer. La idea principal es poder mostrar esta aplicación en funcionamiento y alojarla en mi portafolio.
@@ -27,8 +27,10 @@ Testeo y entrega de funcionalidades
 Se considerará una funcionalidad como terminada luego de ser testeada. El testeo funcional se hará con Selenium.
 
 Desarrollo
+
 Se propone desarrollar con metodología TDD, tanto la parte lógica del frontend como todo el backend. La idea principal es aprender .NET Core y ASP.NET, utilizándolo en el backend, y complementar con React en el frontend, en tanto que para la base de datos se use PostgreSQL.
 
 Producción
+
 Se tiene pensado alojar la base de datos relacional en Render y la aplicación per se en Vercel. Si Vercel soporta bien el backend (o es posible) se alojará allí, de lo contrario se evaluarán alternativas, teniendo en cuenta como primera opción a Render. 
 
